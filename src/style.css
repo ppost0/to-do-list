@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
 html {
   box-sizing: border-box;
+  --main-bg-color: rgb(0, 51, 78);
 }
 
 /* outline to see elements layout during development more easily */
 body * {
-  border: 1px dashed gray;
+  border: 1px dashed rgba(128, 128, 128, 0.4);
 }
 
 *, *:before, *:after {
@@ -17,7 +20,25 @@ body * {
 }
 
 header {
+  display: flex;
+  align-items: center;
   min-height: 10vh;
+  background-color: var(--main-bg-color);
+  border-bottom: 1px solid black;
+}
+
+.icon {
+  padding-left: 20px;
+  height: 40px;
+  width: auto;
+}
+
+.title {
+  padding-left: 10px;
+  display: flex;
+  font-family: 'Yeseva One', cursive;
+  font-size: 2.5rem;
+  color: white;
 }
 
 .content {
