@@ -2,6 +2,11 @@ html {
   box-sizing: border-box;
 }
 
+/* outline to see elements layout during development more easily */
+body * {
+  border: 1px dashed gray;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -9,4 +14,23 @@ html {
 .wrapper {
   width: 100vw;
   height: 100vh;
+}
+
+header {
+  min-height: 10vh;
+}
+
+.content {
+  display: flex;
+  min-height: 90vh;
+  justify-content: space-between;
+}
+
+.nav {
+  min-width: 30vw;
+  flex: 0;
+}
+
+.task-list {
+  flex: 1;
 }
