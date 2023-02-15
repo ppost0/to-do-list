@@ -2,7 +2,9 @@
 
 html {
   box-sizing: border-box;
-  --main-bg-color: rgb(0, 51, 78);
+  --header-bg-color: rgb(0, 51, 78);
+  --main-bg-color: rgb(232, 232, 232);
+  background-color: var(--main-bg-color);
 }
 
 /* outline to see elements layout during development more easily */
@@ -23,8 +25,7 @@ header {
   display: flex;
   align-items: center;
   min-height: 10vh;
-  background-color: var(--main-bg-color);
-  border-bottom: 1px solid black;
+  background-color: var(--header-bg-color);
 }
 
 .icon {
