@@ -1,3 +1,5 @@
+/* eslint-env es6 */
+
 const path = require('path');
 
 module.exports = {
