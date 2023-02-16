@@ -10,5 +10,11 @@ function addIcon() {
 
   const title = document.getElementById('title');
   header.insertBefore(myIcon, title);
-} ()
+}
 
+function init() {
+  addIcon();
+
+}
+
+init();
