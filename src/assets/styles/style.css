@@ -2,8 +2,9 @@
 
 html {
   box-sizing: border-box;
-  --header-bg-color: rgb(0, 51, 78);
+  --header-bg-color: rgb(20, 83, 116);
   --main-bg-color: rgb(232, 232, 232);
+  --nav-bg-color: rgb(209, 209, 209);
   background-color: var(--main-bg-color);
 }
 
@@ -49,6 +50,7 @@ header {
 }
 
 .nav {
+  background-color: var(--nav-bg-color);
   min-width: 30vw;
   flex: 0;
 }
