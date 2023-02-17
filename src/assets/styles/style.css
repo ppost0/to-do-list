@@ -5,6 +5,7 @@ html {
   --header-bg-color: rgb(20, 83, 116);
   --main-bg-color: rgb(232, 232, 232);
   --nav-bg-color: rgb(209, 209, 209);
+  --nav-title-color: rgb(0, 51, 78);
   background-color: var(--main-bg-color);
 }
 
@@ -20,6 +21,7 @@ body * {
 .wrapper {
   width: 100vw;
   height: 100vh;
+  position: fixed;
 }
 
 header {
@@ -41,11 +43,12 @@ header {
   font-family: 'Yeseva One', cursive;
   font-size: 2.5rem;
   color: white;
+  cursor: default;
 }
 
 .content {
   display: flex;
-  min-height: 90vh;
+  min-height: 85vh;
   justify-content: space-between;
 }
 
@@ -53,8 +56,55 @@ header {
   background-color: var(--nav-bg-color);
   min-width: 30vw;
   flex: 0;
+
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.nav-list > * {
+  padding-top: 10px;
+  min-height: 40px;
+}
+
+.nav-projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-list > *,
+.nav-projects > * {
+  padding-left: 5vw;
+  padding-top: 10px;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+.nav-list-title,
+.nav-projects-title {
+  color: var(--nav-title-color);
+  padding-left: 0;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  cursor: default;
+}
+
+.nav-projects-button {
+  color: var(--nav-title-color);
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .task-list {
   flex: 1;
+}
+
+.footer {
+  min-height: 5vh;
+  background-color: var(--header-bg-color);
 }
