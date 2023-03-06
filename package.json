@@ -2,7 +2,7 @@
   "name": "to-do-list",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/ppost0/to-do-list#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
