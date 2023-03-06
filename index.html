@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>To-Do</title>
+    <title>To-do List</title>
   </head>
   <body>
 
     <div class="wrapper" id="wrapper">
 
       <header id="header">
+        <object data="./todolist.svg" class="icon"> </object>
         <div class="title" id="title">To Do . . .</div>
       </header>
 
@@ -24,16 +25,34 @@
             <div class="nav-this-month">This Month</div>
           </div>
 
+          <form class="new-button-form" id="newItemForm" action="" method="post">
+            <button type="button" class="form-close-btn" id="formCloseBtn">×</button>
+            <button type="button" id="newProjectBtn">New Project</button>
+            <button type="button" id="newTaskBtn">New Task</button>
+          </form>
+
           <div class="nav-projects" id="navProjects">
             <span class="nav-projects-title">Projects
               <button class="nav-projects-button" id="navProjectsButton"> + </button>
             </span>
-            <div class="nav-projects-general">General</div>
+
 
           </div>
         </nav>
 
-        <section class="task-list" id="taskList">[TASKLIST]</section>
+        <section class="task-list" id="taskList">
+          <div class="task-list-task">
+            <div class="task-title">Go to the mall</div>
+            <div class="task-description">html example</div>
+            <div class="task-due-date">Mar 4</div>
+            <div class="task-priority">LOW</div>
+            <div>
+              <input class="task-checkbox" type="checkbox">
+            </div>
+          </div>
+
+
+        </section>
 
       </section>
 
