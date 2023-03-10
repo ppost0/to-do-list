@@ -82,6 +82,9 @@ navProjectsButton.addEventListener('click', function() {
 const formCloseBtn = document.getElementById('formCloseBtn');
 formCloseBtn.addEventListener('click', function(e) {
   e.target.parentElement.style.display = 'none';
+  let nodes = document.querySelectorAll('.inputs');
+  //remove title input and submit button if close button is clicked
+  nodes.forEach((e) => {e.remove()});
 })
 
 
@@ -97,7 +100,9 @@ newProjectBtn.addEventListener('click', function(e) {
   let title = document.createElement('input');
   title.setAttribute('type', 'text');
   title.setAttribute('name', 'title');
-  title.setAttribute('placeholder', 'New Project Title');
+  title.style.height = '50px';
+  title.setAttribute('placeholder', 'New Project Title...');
+  title.classList.add('inputs');
 
   //submit button
   let button = document.createElement('button');
@@ -105,6 +110,7 @@ newProjectBtn.addEventListener('click', function(e) {
   button.style.height = '50px';
   button.style.width = '100px';
   button.type = 'button';
+  button.classList.add('inputs');
 
   //click submit button
   button.addEventListener('click', function(a) {
@@ -112,6 +118,11 @@ newProjectBtn.addEventListener('click', function(e) {
       newProject(title.value);
       title.value = '';
       renderProjects();
+      const newItemForm = document.getElementById('newItemForm');
+      newItemForm.style.display = 'none';
+      let nodes = document.querySelectorAll('.inputs');
+      //remove title input and submit button if close button is clicked
+      nodes.forEach((e) => {e.remove()});
     }
   })
 
