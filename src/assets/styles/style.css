@@ -95,12 +95,21 @@ button.inputs {
   grid-row-start: 3;
 }
 
+button.inputs:hover {
+  cursor: pointer;
+  color: white;
+  background-color: var(--header-bg-color);
+  border: 1px solid white;
+}
+
 #newProjectBtn {
-  grid-row-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 #newTaskBtn {
   grid-row-start: 3;
+  grid-row-end: 5;
 }
 
 
@@ -142,7 +151,8 @@ button.inputs {
   left: 40%;
   border: solid 1px black;
   background-color: var(--nav-bg-color);
-  padding: 5px;
+  padding: 20px;
+  padding-right: 10px;
   display: none;
   grid-template: 1fr 1fr 1fr 1fr/ 90%;
   grid-auto-rows: 1fr;

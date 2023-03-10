@@ -106,7 +106,7 @@ newProjectBtn.addEventListener('click', function(e) {
 
   //submit button
   let button = document.createElement('button');
-  button.textContent = 'Submit';
+  button.textContent = 'Add Project';
   button.style.height = '50px';
   button.style.width = '100px';
   button.type = 'button';
@@ -114,14 +114,18 @@ newProjectBtn.addEventListener('click', function(e) {
 
   //click submit button
   button.addEventListener('click', function(a) {
-    if (title.value.length > 1) {
+    if (title.value.length > 30) {
+      alert('Excessively long project title may cause visibility issues.')
+    }
+
+    if (title.value.length > 0) {
       newProject(title.value);
       title.value = '';
       renderProjects();
       const newItemForm = document.getElementById('newItemForm');
       newItemForm.style.display = 'none';
       let nodes = document.querySelectorAll('.inputs');
-      //remove title input and submit button if close button is clicked
+      //remove title input and submit button
       nodes.forEach((e) => {e.remove()});
     }
   })
