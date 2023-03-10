@@ -23,6 +23,13 @@ function newProject(title) {
   projectsList[title] = [];
 }
 
+function renderPersonal() {
+  const navProjects = document.getElementById('navProjects');
+  let pers = document.createElement('div');
+  pers.textContent = 'Personal';
+  navProjects.appendChild(pers);
+}
+
 //render projects to projects navlist display
 function renderProjects() {
   //remove already listed projects
@@ -31,7 +38,7 @@ function renderProjects() {
   let projects = Object.keys(projectsList);
 
   //add projects to list with delete buttons
-  for (let i = 0; i < projects.length; i++) {
+  for (let i = 1; i < projects.length; i++) {
     const navProjects = document.getElementById('navProjects');
 
     let current = document.createElement('div');
@@ -117,8 +124,10 @@ newProjectBtn.addEventListener('click', function(e) {
     if (title.value.length > 30) {
       alert('Excessively long project title may cause visibility issues.')
     }
-
-    if (title.value.length > 0) {
+    if (projectsList[title.value] !== undefined) {
+      alert('Project title already exists.');
+      title.value = '';
+    } else if (title.value.length > 0) {
       newProject(title.value);
       title.value = '';
       renderProjects();
@@ -162,6 +171,7 @@ projectsList['Personal'].push(myTask1);
 addTaskToProject(myTask2, 'Work');
 
 //update projects display
+renderPersonal();
 renderProjects();
 
 
