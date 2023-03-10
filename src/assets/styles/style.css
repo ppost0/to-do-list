@@ -146,6 +146,21 @@ header {
   display: block;
 }
 
+.delete-button {
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: 25%;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  border: 1px solid var(--nav-bg-color);
+  background-color: var(--header-bg-color);
+  color: var(--nav-bg-color);
+
+}
+
 .form-close-btn {
   position: absolute;
   right: 5px;
@@ -163,7 +178,7 @@ header {
 }
 
 .nav-projects-button:hover {
-  background-color: var(--nav-title-color);
+  background-color: var(--header-bg-color);
   color: var(--main-bg-color);
   border-color: var(--main-bg-color);
 }
