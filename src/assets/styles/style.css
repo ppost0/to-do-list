@@ -129,17 +129,21 @@ header {
 }
 
 /* new project and new task buttons in form (excludes close btn)*/
-.new-button-form>*:not(:first-child) {
+.new-item-buttons {
   border: 1px solid gray;
   cursor: pointer;
   transition-delay: 60ms;
   font-family: 'Nunito', sans-serif;
 }
 
-.new-button-form>*:not(:first-child):hover {
+.new-item-buttons:hover {
   border: 1px solid black;
   background-color: var(--header-bg-color);
   color: white;
+}
+
+.new-project-form {
+  display: block;
 }
 
 .form-close-btn {
