@@ -1,6 +1,7 @@
 import './assets/styles/style.css';
 import './assets/styles/normalize.css';
-import {renderPersonal, renderProjects} from './modules/dom-manip.js';
+import { compareAsc, format } from 'date-fns'
+import { renderPersonal, renderProjects, renderTasks } from './modules/dom-manip.js';
 
 
 const taskFactory = (title, description, dueDate, priority, checked) => {
@@ -21,12 +22,6 @@ projectsList['Personal'] = [];
 //function for creating blank new user projects
 function newProject(title) {
   projectsList[title] = [];
-}
-
-
-//function for new task button
-function newTask() {
-
 }
 
 
@@ -52,7 +47,7 @@ formCloseBtn.addEventListener('click', function(e) {
 
 
 
-//new project button, should clear form and add inputs for new project function
+//new project button, should clear form and add inputs for new project
 const newProjectBtn = document.getElementById('newProjectBtn');
 newProjectBtn.addEventListener('click', function(e) {
   const newItemForm = document.getElementById('newItemForm');
@@ -95,8 +90,6 @@ newProjectBtn.addEventListener('click', function(e) {
     }
   })
 
-
-
   newItemForm.appendChild(title);
   newItemForm.appendChild(button);
 })
@@ -108,6 +101,17 @@ newTaskBtn.addEventListener('click', function(e) {
   document.getElementById('newProjectBtn').style.display = 'none';
   document.getElementById('newTaskBtn').style.display = 'none';
 
+  //title
+
+  //description
+
+  //duedate
+
+  //priority
+
+  //checkbox
+
+  //delete btn
 
 })
 
@@ -118,9 +122,9 @@ newTaskBtn.addEventListener('click', function(e) {
 //Testing
 newProject('Work');
 
-let myTask1 = taskFactory('Homework', 'Odin Project To Do List', new Date(2023, 3, 20), 'HIGH', false);
+let myTask1 = taskFactory('Homework', 'Odin Project To Do List', format(new Date(2023, 3, 20), 'MM-dd-yy'), 'HIGH', false);
 
-let myTask2 = taskFactory('Buy clothes', '', new Date(2023, 3, 22, 'LOW', false));
+let myTask2 = taskFactory('Buy clothes', '', format(new Date(2023, 3, 12), 'MM-dd-yy'), 'LOW', false);
 
 projectsList['Personal'].push(myTask1);
 
@@ -129,6 +133,7 @@ addTaskToProject(myTask2, 'Work');
 //update projects display
 renderPersonal();
 renderProjects();
+renderTasks();
 
 
 export {projectsList};

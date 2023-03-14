@@ -32,6 +32,7 @@ function renderProjects() {
       //delete project from projectsList object
       delete projectsList[e.target.parentElement.innerText.slice(0, e.target.parentElement.innerText.length-1)];
       console.log(projectsList);
+      renderTasks();
     });
 
     current.appendChild(deleteBtn);
@@ -40,4 +41,48 @@ function renderProjects() {
   }
 }
 
-export {renderPersonal, renderProjects};
+function renderTasks() {
+  const taskList = document.getElementById('taskList');
+  taskList.innerHTML = '';
+
+  //iterate through tasks of each project in project list
+  for (let project in projectsList) {
+    for (let i = 0; i < projectsList[project].length; i++) {
+      console.log(projectsList[project][i]);
+
+      const task = document.createElement('div');
+      task.classList.add('task-list-task');
+
+      const title = document.createElement('div');
+      title.classList.add('task-title');
+      title.textContent = projectsList[project][i].title;
+
+      const description = document.createElement('div');
+      description.classList.add('task-description');
+      description.textContent = projectsList[project][i].description;
+
+      const date = document.createElement('div');
+      date.classList.add('task-due-date');
+      date.textContent = projectsList[project][i].dueDate;
+
+      const prio = document.createElement('div');
+      prio.classList.add('task-priority');
+      prio.textContent = projectsList[project][i].priority;
+
+      const checkboxDiv = document.createElement('div');
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.classList.add('task-checkbox');
+      checkboxDiv.appendChild(checkbox);
+
+      task.appendChild(title);
+      task.appendChild(description);
+      task.appendChild(date);
+      task.appendChild(prio);
+      task.appendChild(checkboxDiv);
+      taskList.appendChild(task);
+    }
+  }
+}
+
+export {renderPersonal, renderProjects, renderTasks};
