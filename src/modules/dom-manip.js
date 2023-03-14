@@ -72,6 +72,7 @@ function renderTasks() {
       const checkboxDiv = document.createElement('div');
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
+      checkbox.checked = projectsList[project][i].checked;
       checkbox.classList.add('task-checkbox');
       checkboxDiv.appendChild(checkbox);
 
