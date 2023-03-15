@@ -16,6 +16,8 @@ function renderProjects() {
 
   //add projects to list with delete buttons
   for (let i = 1; i < projects.length; i++) {
+    console.log(projects);
+    console.log(projects[i], ' //projects[i]');
     const navProjects = document.getElementById('navProjects');
 
     let current = document.createElement('div');
