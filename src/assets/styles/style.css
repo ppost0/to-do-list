@@ -158,6 +158,7 @@ button.inputs:hover {
   grid-auto-rows: 1fr;
   grid-auto-columns: 90%;
   gap: 5px;
+  z-index: 999;
 }
 
 /* new project and new task buttons in form (excludes close btn)*/
@@ -235,6 +236,10 @@ button.inputs:hover {
   border: 1px solid gray;
 }
 
+.task-description {
+  font-style: italic;
+}
+
 .task-list-task > * {
   padding: 5%;
 }
@@ -246,6 +251,24 @@ button.inputs:hover {
   margin-left: 75%;
 }
 
+.checkbox-div {
+  display: flex;
+  align-items: center;
+}
+
+.delete-task-button {
+  position: absolute;
+  border-radius: 50%;
+  color: red;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.delete-task-button:hover {
+  color: white;
+  background-color: var(--header-bg-color);
+  cursor: pointer;
+}
 
 .footer {
   min-height: 5vh;

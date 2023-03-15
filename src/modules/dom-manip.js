@@ -41,6 +41,8 @@ function renderProjects() {
   }
 }
 
+
+//render tasks to display
 function renderTasks() {
   const taskList = document.getElementById('taskList');
   taskList.innerHTML = '';
@@ -48,8 +50,6 @@ function renderTasks() {
   //iterate through tasks of each project in project list
   for (let project in projectsList) {
     for (let i = 0; i < projectsList[project].length; i++) {
-      console.log(projectsList[project][i]);
-
       const task = document.createElement('div');
       task.classList.add('task-list-task');
 
@@ -74,14 +74,35 @@ function renderTasks() {
       checkbox.type = 'checkbox';
       checkbox.checked = projectsList[project][i].checked;
       checkbox.classList.add('task-checkbox');
-      checkboxDiv.appendChild(checkbox);
+      checkboxDiv.classList.add('checkbox-div');
 
+      const del = document.createElement('button');
+      const delDiv = document.createElement('div');
+      del.classList.add('delete-task-button');
+      del.textContent = '×';
+
+      checkboxDiv.appendChild(del);
+      checkboxDiv.appendChild(checkbox)
       task.appendChild(title);
       task.appendChild(description);
       task.appendChild(date);
       task.appendChild(prio);
       task.appendChild(checkboxDiv);
       taskList.appendChild(task);
+
+      del.addEventListener('click', function(e) {
+        //delete task node
+        e.target.parentElement.parentElement.remove();
+        //delete task from project
+        for (let project in projectsList) {
+          for (let i = 0; i < projectsList[project].length; i++) {
+            if (e.target.parentElement.parentElement.children[0].innerText === projectsList[project][i].title) {
+              projectsList[project].splice(i, 1);
+            }
+          }
+        }
+        console.log(projectsList);
+      })
     }
   }
 }
