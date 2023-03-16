@@ -236,6 +236,10 @@ button.inputs:hover {
   border: 1px solid gray;
 }
 
+.task-title {
+  font-weight: 700;
+}
+
 .task-description {
   font-style: italic;
 }
