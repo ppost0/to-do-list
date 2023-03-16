@@ -46,6 +46,13 @@ formCloseBtn.addEventListener('click', function(e) {
 })
 
 
+const navAll = document.getElementById('navAll');
+navAll.addEventListener('click', renderTasks);
+
+
+
+
+
 
 //new project button, should clear form and add inputs for new project
 const newProjectBtn = document.getElementById('newProjectBtn');
@@ -127,13 +134,13 @@ newTaskBtn.addEventListener('click', function(e) {
 //Testing
 newProject('Work');
 
-let myTask1 = taskFactory('Homework', 'Odin Project To Do List', format(new Date(2023, 3, 9), 'MM-dd-yy'), 'HIGH', false);
+let myTask1 = taskFactory('Homework', 'Odin Project To Do List', format(new Date(2023, 3, 9), 'MMM dd, yyyy'), 'HIGH', false);
 
-let myTask2 = taskFactory('Buy supplies', '', format(new Date(2023, 3, 12), 'MM-dd-yy'), 'LOW', false);
+let myTask2 = taskFactory('Buy supplies', '', format(new Date(2023, 3, 12), 'MM/dd/yy'), 'LOW', false);
 
-let myTask3 = taskFactory('Defeat Gammamon', 'Gather your power...', format(new Date(2023, 3, 14), 'MM-dd-yy'), 'MED', true);
+let myTask3 = taskFactory('Defeat Gammamon', 'Gather your power...', format(new Date(2023, 3, 14), 'MMM dd, yyyy'), 'MED', true);
 
-let myTask4 = taskFactory('Venture to Peru', '', format(new Date(2023, 5, 20), 'MM-dd-yy'), 'LOW', false );
+let myTask4 = taskFactory('Venture to Peru', '', format(new Date(2023, 5, 20), 'MMM dd, yyyy'), 'LOW', false );
 
 let myTask5 = taskFactory('a');
 let myTask6 = taskFactory('b');
@@ -157,20 +164,20 @@ addTaskToProject(myTask1, 'Personal');
 addTaskToProject(myTask2, 'Work');
 addTaskToProject(myTask3, 'Personal');
 addTaskToProject(myTask4, 'Personal');
-addTaskToProject(myTask5, 'Personal');
-addTaskToProject(myTask6, 'Personal');
-addTaskToProject(myTask7, 'Personal');
-addTaskToProject(myTask8, 'Personal');
-addTaskToProject(myTask9, 'Personal');
-addTaskToProject(myTask10, 'Personal');
-addTaskToProject(myTask11, 'Personal');
-addTaskToProject(myTask12, 'Personal');
-addTaskToProject(myTask13, 'Personal');
-addTaskToProject(myTask14, 'Personal');
-addTaskToProject(myTask15, 'Personal');
-addTaskToProject(myTask16, 'Personal');
-addTaskToProject(myTask17, 'Personal');
-addTaskToProject(myTask18, 'Personal');
+// addTaskToProject(myTask5, 'Personal');
+// addTaskToProject(myTask6, 'Personal');
+// addTaskToProject(myTask7, 'Personal');
+// addTaskToProject(myTask8, 'Personal');
+// addTaskToProject(myTask9, 'Personal');
+// addTaskToProject(myTask10, 'Personal');
+// addTaskToProject(myTask11, 'Personal');
+// addTaskToProject(myTask12, 'Personal');
+// addTaskToProject(myTask13, 'Personal');
+// addTaskToProject(myTask14, 'Personal');
+// addTaskToProject(myTask15, 'Personal');
+// addTaskToProject(myTask16, 'Personal');
+// addTaskToProject(myTask17, 'Personal');
+// addTaskToProject(myTask18, 'Personal');
 
 
 

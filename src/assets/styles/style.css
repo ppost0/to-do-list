@@ -217,6 +217,13 @@ button.inputs:hover {
   border-color: var(--main-bg-color);
 }
 
+.nav-list>*:not(:first-child):hover,
+.project-personal:hover,
+.project-list-project:hover {
+  text-shadow: 0 0 10px var(--header-bg-color);
+}
+
+
 .task-list {
   flex: 1;
   display: grid;
@@ -237,7 +244,7 @@ button.inputs:hover {
 }
 
 .task-title {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .task-description {
