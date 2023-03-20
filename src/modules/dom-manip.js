@@ -99,6 +99,7 @@ function renderProjects() {
       delete projectsList[e.target.parentElement.innerText.slice(0, e.target.parentElement.innerText.length-1)];
       console.log(projectsList);
       renderTasks();
+      e.stopPropagation();
     });
 
     current.appendChild(deleteBtn);
@@ -235,6 +236,7 @@ function renderSpecificProject(e) {
       console.log(projectsList);
     })
   })
+  e.stopPropagation();
 }
 
 

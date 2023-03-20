@@ -134,13 +134,13 @@ newTaskBtn.addEventListener('click', function(e) {
 //Testing
 newProject('Work');
 
-let myTask1 = taskFactory('Homework', 'Odin Project To Do List', format(new Date(2023, 3, 9), 'MMM dd, yyyy'), 'HIGH', false);
+let myTask1 = taskFactory('Homework', 'Odin Project To Do List', format(new Date(2023, 3, 9), 'MMM do, yyyy'), 'HIGH', false);
 
-let myTask2 = taskFactory('Buy supplies', '', format(new Date(2023, 3, 12), 'MM/dd/yy'), 'LOW', false);
+let myTask2 = taskFactory('Buy supplies', '', format(new Date(2023, 3, 12), 'MMM do yyyy'), 'LOW', false);
 
-let myTask3 = taskFactory('Defeat Gammamon', 'Gather your power...', format(new Date(2023, 3, 14), 'MMM dd, yyyy'), 'MED', true);
+let myTask3 = taskFactory('Defeat Gammamon', 'Gather your power...', format(new Date(2023, 3, 14), 'MMM do, yyyy'), 'MED', true);
 
-let myTask4 = taskFactory('Venture to Peru', '', format(new Date(2023, 5, 20), 'MMM dd, yyyy'), 'LOW', false );
+let myTask4 = taskFactory('Venture to Peru', '', format(new Date(2023, 5, 20), 'MMM do, yyyy'), 'LOW', false );
 
 let myTask5 = taskFactory('a');
 let myTask6 = taskFactory('b');
