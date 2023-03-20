@@ -237,7 +237,7 @@ button.inputs:hover {
 
 .task-list-task {
   display: grid;
-  grid-template-rows: 1fr 1fr min-content min-content;
+  grid-template-rows: 1fr 2fr min-content min-content;
   min-height: 20px;
   min-width: 20px;
   border: 1px solid gray;
