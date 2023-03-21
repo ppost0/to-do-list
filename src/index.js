@@ -210,6 +210,7 @@ newTaskBtn.addEventListener('click', function(e) {
     checkboxDiv.appendChild(del)
     task.appendChild(checkboxDiv);
 
+
     del.addEventListener('click', function(e) {
       //delete task node
       e.target.parentElement.parentElement.remove();
@@ -231,7 +232,8 @@ newTaskBtn.addEventListener('click', function(e) {
 
     addTaskToProject(newTask, projectNode.value);
     console.log(projectsList);
-
+    title.value = '';
+    description.value = '';
 
   });
 })
