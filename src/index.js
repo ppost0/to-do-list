@@ -1,6 +1,6 @@
 import './assets/styles/style.css';
 import './assets/styles/normalize.css';
-import { compareAsc, format } from 'date-fns'
+import { compareAsc, format, parseISO } from 'date-fns'
 import { renderPersonal, renderProjects, renderTasks } from './modules/dom-manip.js';
 
 
@@ -50,9 +50,6 @@ formCloseBtn.addEventListener('click', function(e) {
 
 const navAll = document.getElementById('navAll');
 navAll.addEventListener('click', renderTasks);
-
-
-
 
 
 
@@ -154,7 +151,7 @@ newTaskBtn.addEventListener('click', function(e) {
   prio.appendChild(low);
   newItemForm.appendChild(prio);
 
-  //project
+  //project select
   let projectNode = document.createElement('select');
   projectNode.classList.add('inputs-task');
   for (let project in projectsList) {
@@ -172,10 +169,34 @@ newTaskBtn.addEventListener('click', function(e) {
   submit.setAttribute('type', 'button');
   newItemForm.appendChild(submit);
 
-  //delete btn
+  //submit button event listener
+  submit.addEventListener('click', function() {
+    //add task to DOM
+    let taskList = document.getElementById('taskList');
+    let task = document.createElement('div');
+    task.classList.add('task-list-task');
 
+    const taskTitle = document.createElement('div');
+    taskTitle.classList.add('task-title');
+    taskTitle.textContent = title.value;
+    task.appendChild(taskTitle);
+
+    const taskDescription = document.createElement('div');
+    taskDescription.classList.add('task-description');
+    taskDescription.textContent = description.value;
+    task.appendChild(taskDescription);
+
+    const taskDate = document.createElement('div');
+    taskDate.classList.add('task-due-date');
+    taskDate.textContent = format(parseISO(duedate.value), 'MMM do, yyyy');
+    task.appendChild(taskDate);
+
+    taskList.appendChild(task);
+
+    //add task to project array
+
+  });
 })
-
 
 
 //Testing

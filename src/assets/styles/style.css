@@ -57,9 +57,8 @@ header {
 
 .nav {
   background-color: var(--nav-bg-color);
-  min-width: 30vw;
+  min-width: 25vw;
   flex: 0;
-
 }
 
 .nav-list {
@@ -100,7 +99,7 @@ header {
 button.inputs-task:hover {
   cursor: pointer;
   background-color: var(--header-bg-color);
-  border: 1px solid white;
+  border: 1px solid darkgray;
   color: white;
 }
 
@@ -163,6 +162,7 @@ button.inputs:hover {
   top: 100px;
   left: 40%;
   border: solid 1px black;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
   background-color: var(--nav-bg-color);
   padding: 20px;
   padding-right: 10px;
@@ -170,7 +170,7 @@ button.inputs:hover {
   grid-template: 1fr 2fr 1fr 1fr/ 90%;
   grid-auto-rows: 1fr;
   grid-auto-columns: 90%;
-  gap: 5px;
+  gap: 10px;
   z-index: 999;
 }
 
@@ -197,7 +197,7 @@ button.inputs:hover {
   border: 1px solid black;
   border-radius: 50%;
   position: absolute;
-  left: 25%;
+  left: 20%;
   cursor: pointer;
 }
 
@@ -240,10 +240,10 @@ button.inputs:hover {
 .task-list {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-auto-rows: 1fr 1fr;
-  grid-auto-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
   padding: 10px;
 }
