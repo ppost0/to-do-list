@@ -41,8 +41,10 @@ const formCloseBtn = document.getElementById('formCloseBtn');
 formCloseBtn.addEventListener('click', function(e) {
   e.target.parentElement.style.display = 'none';
   let nodes = document.querySelectorAll('.inputs');
+  let taskNodes = document.querySelectorAll('.inputs-task');
   //remove title input and submit button if close button is clicked
   nodes.forEach((e) => {e.remove()});
+  taskNodes.forEach((e) => {e.remove()});
 })
 
 
@@ -116,14 +118,59 @@ newTaskBtn.addEventListener('click', function(e) {
   document.getElementById('newTaskBtn').style.display = 'none';
 
   //title
+  let title = document.createElement('input');
+  title.setAttribute('type', 'text');
+  title.setAttribute('name', 'title');
+  title.setAttribute('placeholder', 'New Task Title...');
+  title.classList.add('inputs-task');
+  newItemForm.appendChild(title);
 
   //description
+  let description = document.createElement('input');
+  description.setAttribute('type', 'text');
+  description.setAttribute('name', 'description');
+  description.style.height = '100px';
+  description.setAttribute('placeholder', 'Description...');
+  description.classList.add('inputs-task');
+  newItemForm.appendChild(description);
 
   //duedate
+  let duedate = document.createElement('input');
+  duedate.setAttribute('type', 'date');
+  duedate.classList.add('inputs-task');
+  newItemForm.appendChild(duedate);
 
   //priority
+  let prio = document.createElement('select');
+  prio.classList.add('inputs-task')
+  let high = document.createElement('option');
+  high.textContent = 'HIGH';
+  let med = document.createElement('option');
+  med.textContent = 'MED';
+  let low = document.createElement('option');
+  low.textContent = 'LOW';
+  prio.appendChild(high);
+  prio.appendChild(med);
+  prio.appendChild(low);
+  newItemForm.appendChild(prio);
 
-  //checkbox
+  //project
+  let projectNode = document.createElement('select');
+  projectNode.classList.add('inputs-task');
+  for (let project in projectsList) {
+    let currentNode = document.createElement('option');
+    currentNode.textContent = project;
+    projectNode.appendChild(currentNode);
+  }
+  newItemForm.appendChild(projectNode);
+
+  //submit button
+  let submit = document.createElement('button');
+  submit.classList.add('inputs-task')
+  submit.textContent = 'Add Task';
+  submit.style.height = '30px';
+  submit.setAttribute('type', 'button');
+  newItemForm.appendChild(submit);
 
   //delete btn
 

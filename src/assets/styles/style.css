@@ -91,6 +91,19 @@ header {
   grid-row-start: 2;
 }
 
+.inputs-task {
+  border: 1px solid darkgray;
+}
+
+
+
+button.inputs-task:hover {
+  cursor: pointer;
+  background-color: var(--header-bg-color);
+  border: 1px solid white;
+  color: white;
+}
+
 button.inputs {
   grid-row-start: 3;
 }
@@ -147,14 +160,14 @@ button.inputs:hover {
   position: absolute;
   min-width: 300px;
   min-height: 300px;
-  top: 200px;
+  top: 100px;
   left: 40%;
   border: solid 1px black;
   background-color: var(--nav-bg-color);
   padding: 20px;
   padding-right: 10px;
   display: none;
-  grid-template: 1fr 1fr 1fr 1fr/ 90%;
+  grid-template: 1fr 2fr 1fr 1fr/ 90%;
   grid-auto-rows: 1fr;
   grid-auto-columns: 90%;
   gap: 5px;
