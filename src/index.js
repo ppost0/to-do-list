@@ -191,9 +191,47 @@ newTaskBtn.addEventListener('click', function(e) {
     taskDate.textContent = format(parseISO(duedate.value), 'MMM do, yyyy');
     task.appendChild(taskDate);
 
+    const taskPrio = document.createElement('div');
+    taskPrio.classList.add('task-priority');
+    taskPrio.textContent = prio.value;
+    task.appendChild(taskPrio);
+
+    const checkboxDiv = document.createElement('div');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('task-checkbox');
+    checkboxDiv.classList.add('checkbox-div');
+    checkboxDiv.appendChild(checkbox);
+    task.appendChild(checkboxDiv);
+
+    const del = document.createElement('button');
+    del.classList.add('delete-task-button');
+    del.textContent = '×';
+    checkboxDiv.appendChild(del)
+    task.appendChild(checkboxDiv);
+
+    del.addEventListener('click', function(e) {
+      //delete task node
+      e.target.parentElement.parentElement.remove();
+      //delete task from project
+      for (let project in projectsList) {
+        for (let i = 0; i < projectsList[project].length; i++) {
+          if (e.target.parentElement.parentElement.children[0].innerText === projectsList[project][i].title) {
+            projectsList[project].splice(i, 1);
+          }
+        }
+      }
+      console.log(projectsList);
+    })
+
     taskList.appendChild(task);
 
     //add task to project array
+    let newTask = taskFactory(title.value, description.value, format(parseISO(duedate.value), 'MMM do, yyyy'), prio.value, false);
+
+    addTaskToProject(newTask, projectNode.value);
+    console.log(projectsList);
+
 
   });
 })

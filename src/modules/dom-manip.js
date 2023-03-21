@@ -144,7 +144,6 @@ function renderTasks() {
       checkboxDiv.classList.add('checkbox-div');
 
       const del = document.createElement('button');
-      const delDiv = document.createElement('div');
       del.classList.add('delete-task-button');
       del.textContent = '×';
 
