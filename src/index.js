@@ -140,15 +140,16 @@ newTaskBtn.addEventListener('click', function(e) {
   //priority
   let prio = document.createElement('select');
   prio.classList.add('inputs-task')
-  let high = document.createElement('option');
-  high.textContent = 'HIGH';
-  let med = document.createElement('option');
-  med.textContent = 'MED';
   let low = document.createElement('option');
   low.textContent = 'LOW';
-  prio.appendChild(high);
-  prio.appendChild(med);
+  let med = document.createElement('option');
+  med.textContent = 'MED';
+  let high = document.createElement('option');
+  high.textContent = 'HIGH';
+
   prio.appendChild(low);
+  prio.appendChild(med);
+  prio.appendChild(high);
   newItemForm.appendChild(prio);
 
   //project select
