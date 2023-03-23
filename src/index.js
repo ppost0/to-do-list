@@ -124,7 +124,70 @@ navToday.addEventListener('click', function() {
 
 //attach event listener to render tasks due This Week
 const navThisWeek = document.getElementById('navThisWeek');
+navThisWeek.addEventListener('click', function() {
+  const taskList = document.getElementById('taskList');
+  taskList.innerHTML = '';
 
+  for (let project in projectsList) {
+    for (let i = 0; i < projectsList[project].length; i++) {
+      if (isThisWeek(parse(projectsList[project][i].dueDate, 'MMM do, yyyy', new Date()))) {
+
+        const task = document.createElement('div');
+        task.classList.add('task-list-task');
+
+        const title = document.createElement('div');
+        title.classList.add('task-title');
+        title.textContent = projectsList[project][i].title;
+
+        const description = document.createElement('div');
+        description.classList.add('task-description');
+        description.textContent = projectsList[project][i].description;
+
+        const date = document.createElement('div');
+        date.classList.add('task-due-date');
+        date.textContent = projectsList[project][i].dueDate;
+
+        const prio = document.createElement('div');
+        prio.classList.add('task-priority');
+        prio.textContent = projectsList[project][i].priority;
+
+        const checkboxDiv = document.createElement('div');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = projectsList[project][i].checked;
+        checkbox.classList.add('task-checkbox');
+        checkboxDiv.classList.add('checkbox-div');
+
+        const del = document.createElement('button');
+        del.classList.add('delete-task-button');
+        del.textContent = '×';
+
+        checkboxDiv.appendChild(del);
+        checkboxDiv.appendChild(checkbox)
+        task.appendChild(title);
+        task.appendChild(description);
+        task.appendChild(date);
+        task.appendChild(prio);
+        task.appendChild(checkboxDiv);
+        taskList.appendChild(task);
+
+        del.addEventListener('click', function(e) {
+          //delete task node
+          e.target.parentElement.parentElement.remove();
+          //delete task from project
+          for (let project in projectsList) {
+            for (let i = 0; i < projectsList[project].length; i++) {
+              if (e.target.parentElement.parentElement.children[0].innerText === projectsList[project][i].title) {
+                projectsList[project].splice(i, 1);
+              }
+            }
+          }
+          console.log(projectsList);
+        })
+      }
+    }
+  }
+})
 
 
 
