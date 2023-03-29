@@ -263,6 +263,15 @@ button.inputs:hover {
 
 .task-description {
   font-style: italic;
+  border: 1px dotted darkgray;
+  border-left: none;
+  border-right: none;
+}
+
+.task-priority {
+  border: 1px dotted darkgray;
+  border-left: none;
+  border-right: none;
 }
 
 .task-list-task > * {
@@ -274,6 +283,7 @@ button.inputs:hover {
   width: 30px;
   height: 30px;
   margin-left: 75%;
+  cursor: pointer;
 }
 
 .checkbox-div {
