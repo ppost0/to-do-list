@@ -66,6 +66,7 @@ function renderPersonal() {
             }
           }
         }
+        localStorage.setItem('items', JSON.stringify(projectsList));
         console.log(projectsList);
       })
     })
@@ -97,6 +98,8 @@ function renderProjects() {
       e.target.parentElement.remove();
       //delete project from projectsList object
       delete projectsList[e.target.parentElement.innerText.slice(0, e.target.parentElement.innerText.length-1)];
+      //remove from storage
+      localStorage.setItem('items', JSON.stringify(projectsList));
       console.log(projectsList);
       renderTasks();
       e.stopPropagation();
@@ -167,6 +170,7 @@ function renderTasks() {
             }
           }
         }
+        localStorage.setItem('items', JSON.stringify(projectsList));
         console.log(projectsList);
       })
     }

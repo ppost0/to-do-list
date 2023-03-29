@@ -12,16 +12,24 @@ const taskFactory = (title, description, dueDate, priority, checked) => {
 //function for adding tasks to project
 function addTaskToProject(task, project) {
   projectsList[project].push(task);
+  localStorage.setItem('items', JSON.stringify(projectsList));
+  console.log(localStorage);
 }
 
 
 //create project list and default project: Personal
 let projectsList = {};
 projectsList['Personal'] = [];
+if (localStorage.items !== undefined) {
+  projectsList = JSON.parse(localStorage.getItem('items'));
+  console.log(JSON.parse(localStorage.getItem('items')));
+}
 
 //function for creating blank new user projects
 function newProject(title) {
   projectsList[title] = [];
+  localStorage.setItem('projects', JSON.stringify(Object.keys(projectsList)));
+  console.log(localStorage);
 }
 
 
@@ -449,52 +457,18 @@ newTaskBtn.addEventListener('click', function(e) {
 
 
 //Testing
-newProject('Work');
+// newProject('Work');
 
-let myTask1 = taskFactory('Homework', 'Odin Project To Do List', format(new Date(2023, 2, 23), 'MMM do, yyyy'), 'HIGH', false);
+// let myTask1 = taskFactory('Homework', 'Odin Project To Do List', format(new Date(2023, 2, 23), 'MMM do, yyyy'), 'HIGH', false);
 
-let myTask2 = taskFactory('Buy supplies', '', format(new Date(2023, 3, 12), 'MMM do, yyyy'), 'LOW', false);
+// let myTask2 = taskFactory('Buy supplies', '', format(new Date(2023, 2, 25), 'MMM do, yyyy'), 'LOW', false);
 
-let myTask3 = taskFactory('Defeat Gammamon', 'Gather your power...', format(new Date(2023, 3, 14), 'MMM do, yyyy'), 'MED', true);
+// let myTask3 = taskFactory('Defeat Gammamon', 'Gather your power...', format(new Date(2023, 2, 30), 'MMM do, yyyy'), 'MED', true);
 
-let myTask4 = taskFactory('Venture to Peru', '', format(new Date(2023, 5, 20), 'MMM do, yyyy'), 'LOW', false );
-
-let myTask5 = taskFactory('a');
-let myTask6 = taskFactory('b');
-let myTask7 = 'c';
-let myTask8 = 'd';
-let myTask9 = 'e';
-let myTask10 = 'f';
-let myTask11 = 'g';
-let myTask12 = 'h';
-let myTask13 = 'i';
-let myTask14 = 'j';
-let myTask15 = 'k';
-let myTask16 = 'l';
-let myTask17 = 'm';
-let myTask18 = 'n';
+// let myTask4 = taskFactory('Venture to Peru', '', format(new Date(2023, 5, 20), 'MMM do, yyyy'), 'LOW', false );
 
 
 
-
-addTaskToProject(myTask1, 'Personal');
-addTaskToProject(myTask2, 'Work');
-addTaskToProject(myTask3, 'Personal');
-addTaskToProject(myTask4, 'Personal');
-// addTaskToProject(myTask5, 'Personal');
-// addTaskToProject(myTask6, 'Personal');
-// addTaskToProject(myTask7, 'Personal');
-// addTaskToProject(myTask8, 'Personal');
-// addTaskToProject(myTask9, 'Personal');
-// addTaskToProject(myTask10, 'Personal');
-// addTaskToProject(myTask11, 'Personal');
-// addTaskToProject(myTask12, 'Personal');
-// addTaskToProject(myTask13, 'Personal');
-// addTaskToProject(myTask14, 'Personal');
-// addTaskToProject(myTask15, 'Personal');
-// addTaskToProject(myTask16, 'Personal');
-// addTaskToProject(myTask17, 'Personal');
-// addTaskToProject(myTask18, 'Personal');
 
 
 
