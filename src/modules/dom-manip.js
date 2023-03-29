@@ -246,13 +246,4 @@ function renderSpecificProject(e) {
 
 
 
-
-
-
-
-
-
-
-
-
 export {renderPersonal, renderProjects, renderTasks};

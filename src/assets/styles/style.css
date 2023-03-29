@@ -11,11 +11,7 @@ html {
   background-color: var(--main-bg-color);
 }
 
-/* outline to see elements layout during development more easily */
-body * {
-  /* border: 1px dashed rgba(128, 128, 128, 0.4); */
 
-}
 
 *, *:before, *:after {
   box-sizing: inherit;

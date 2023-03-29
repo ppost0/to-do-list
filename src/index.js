@@ -459,21 +459,6 @@ newTaskBtn.addEventListener('click', function(e) {
 })
 
 
-//Testing
-// newProject('Work');
-
-// let myTask1 = taskFactory('Homework', 'Odin Project To Do List', format(new Date(2023, 2, 23), 'MMM do, yyyy'), 'HIGH', false);
-
-// let myTask2 = taskFactory('Buy supplies', '', format(new Date(2023, 2, 25), 'MMM do, yyyy'), 'LOW', false);
-
-// let myTask3 = taskFactory('Defeat Gammamon', 'Gather your power...', format(new Date(2023, 2, 30), 'MMM do, yyyy'), 'MED', true);
-
-// let myTask4 = taskFactory('Venture to Peru', '', format(new Date(2023, 5, 20), 'MMM do, yyyy'), 'LOW', false );
-
-
-
-
-
 
 //update projects display
 renderPersonal();
