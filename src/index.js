@@ -13,6 +13,7 @@ const taskFactory = (title, description, dueDate, priority, checked) => {
 function addTaskToProject(task, project) {
   projectsList[project].push(task);
   localStorage.setItem('items', JSON.stringify(projectsList));
+  localStorage.setItem('projects', JSON.stringify(Object.keys(projectsList)));
   console.log(localStorage);
 }
 
@@ -29,6 +30,8 @@ if (localStorage.items !== undefined) {
 function newProject(title) {
   projectsList[title] = [];
   localStorage.setItem('projects', JSON.stringify(Object.keys(projectsList)));
+  localStorage.setItem('items', JSON.stringify(projectsList));
+  console.log(JSON.stringify(Object.keys(projectsList)));
   console.log(localStorage);
 }
 

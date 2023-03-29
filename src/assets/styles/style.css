@@ -13,7 +13,7 @@ html {
 
 /* outline to see elements layout during development more easily */
 body * {
-  border: 1px dashed rgba(128, 128, 128, 0.4);
+  /* border: 1px dashed rgba(128, 128, 128, 0.4); */
 
 }
 
@@ -59,12 +59,12 @@ header {
   background-color: var(--nav-bg-color);
   min-width: 25vw;
   flex: 0;
+  border: 1px solid darkgray;
 }
 
 .nav-list {
   display: flex;
   flex-direction: column;
-
 }
 
 .nav-list > * {
@@ -83,6 +83,7 @@ header {
   padding-top: 10px;
   min-height: 40px;
   cursor: pointer;
+  border-bottom: 1px solid darkgray;
 }
 
 .inputs {

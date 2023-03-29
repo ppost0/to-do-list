@@ -78,7 +78,7 @@ function renderProjects() {
   //remove already listed projects
   let oldNodes = document.querySelectorAll('.project-list-project');
   oldNodes.forEach((e) => {e.remove()});
-  let projects = Object.keys(projectsList);
+  let projects = JSON.parse(localStorage.getItem('projects'));
 
   //add projects to list with delete buttons
   for (let i = 1; i < projects.length; i++) {
@@ -100,6 +100,7 @@ function renderProjects() {
       delete projectsList[e.target.parentElement.innerText.slice(0, e.target.parentElement.innerText.length-1)];
       //remove from storage
       localStorage.setItem('items', JSON.stringify(projectsList));
+      localStorage.setItem('projects', JSON.stringify(Object.keys(projectsList)));
       console.log(projectsList);
       renderTasks();
       e.stopPropagation();
